@@ -75,7 +75,7 @@ layout: default
   {% if page.teaser %}
     <div class="row">
       <div class="col-md-12">
-        <img src="{{ page.teaser }}" style="max-width: 100%; display: block; margin: auto"></a>
+        <img src="{{ page.image-dir }}/{{ page.teaser }}" style="max-width: 100%; display: block; margin: auto"></a>
         <p class="text-justify teaser-caption"><small><em> {{ page.teaser-caption }}</em></small></p>
       </div>
     </div>
@@ -90,9 +90,9 @@ layout: default
   </div>
 
   <!-- Download links -->
+  {% assign dl = page.downloads %}
   {% if dl.published %}
   <div>
-    {% assign dl = page.downloads %}
     <h2 class="page-header">Downloads</h2>
     <p>
       <h3>Publication</h3>

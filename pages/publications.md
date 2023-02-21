@@ -24,7 +24,7 @@ permalink: /publications/
     <div class="col-lg-2">
       <a href="{{ p.permalink }}">
       {% if p.thumbnail %}
-        <img class="img-responsive img-thumbnail center-cropped shadowed" src="{{ p.thumbnail }}">
+        <img class="img-responsive img-thumbnail center-cropped shadowed" src="{{ p.image-dir }}//{{ p.thumbnail }}">
       {% else %}
         <img class="img-responsive img-thumbnail shadowed" src="http://placehold.it/200x200">
       {% endif %}
