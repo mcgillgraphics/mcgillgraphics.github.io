@@ -60,14 +60,16 @@ Add new entry in `_data/news.yaml` following the given format. The most recent n
 
 ### Publications
 
-To add a new publications, follow these simple steps:
+To add a new publication, follow these steps:
 
-1) Duplicate `.2023-author-acronym.md` and rename accordingly with main author's last name and publication acronym. Remove leading `.` to make it visible to Jekyll.
+1) Clone the [`publications`](https://github.com/mcgillgraphics/publications) repository, or update it if this is not your first time.
+1) Duplicate `papers/.2023-author-acronym.md` and rename accordingly with main author's last name and publication acronym. Remove leading `.` to make it visible to Jekyll.
 2) Modify the file by replacing relevant fields for the new paper. By default, the template have most fields filled to give a sense of what is expected, although most fields are optional.
-3) Add hyperlinks to media files on remote servers or in `/pub-assets`. Create paper directory `/pub-assets/2023-author-acronym.md`, if necessary.
+3) Add hyperlinks to media files on remote servers or in `assets/2023-author-acronym/`. Create subdirectory if necessary.
 3) When done, delete unused field data by leaving the tag empty or with a comment symbol (e.g., `file: #`).
+4) Push change onto main branch of `publications`.
 
-If done correctly, the paper will be automatically formatted and visible at `{{site.url}}/publications/acronym`.
+If done correctly, an admin will pull your changes into this repository and your paper will be automatically formatted and visible at `{{site.url}}/publications/acronym`.
 
 ### Courses 
 
@@ -76,19 +78,22 @@ Add a new entry in `_data/teaching.yaml` following the given format.
 ## Other Guidelines
 
 ### Permissions
-__Only organization administrators__ can push modifications to the main public website. Other members can see the repository in read-only mode. If a student wants to contribute a change (e.g., new publication), another repository will be made available (e.g., `website-public`) to them where they can freely commit Markdown files and media. This repository will be added as a submodule to this repository, allowing seamless integration while retaining appropriate priviledges.
+__Only organization administrators__ can push modifications to the main public website. Other members can see the repository in read-only mode. If a student wants to contribute a change (e.g., new publication), this is done via [`publications`](https://github.com/mcgillgraphics/publications). This repository is added as a submodule to the main website repository, allowing seamless integration while retaining appropriate priviledges.
 
 ### Website Updates
 
-__Users.__ We do not use pull requests on this repository as this would require every student to clone the main build in order to modify a handful of files. Instead, we will rely on a submodule which will allow users to use the GitHub web interface to add and modify Markdown files easily. Users can also use the Git command-line to push/pull from the public submodule repository.
+__Users.__ We do not use pull requests here as this would require every non-admin users to clone the main build in order to modify a handful of files. Instead, we rely on the submodule which allows users to use the GitHub web interface to add and modify Markdown files easily. Users can also use the Git command-line to push/pull from the public submodule repository.
 
-__Administrators.__ To update the website following a recent change from a user, an administrator will need to:
-1) Pull changes from the submodule `website-public`.
+__Administrators.__ To update the website following a recent change from a user in `publications`, an administrator will need to:
+1) Pull changes from the submodule by running: `cd _publications && git pull`.
 2) Recompile the static website locally to update `_site`.
-3) Update `_site` in `public_html` using a tool like `rsync`.
+3) Make sure there is no formatting error by visualizing new publication page.
+    - If none, proceed to 4);
+    - Otherwise, correct error in submodule repo, commit + push changes and go to 1).
+4) Push `_site` to main `public_html` on host server using a tool like `rsync`.
 
 Current administrators are Derek Nowrouzrezahrai, Marc-Antoine Beaudoin and Joey Litalien.
 
 ## TODOs
-- [ ] Setup public submodule for non-admin users.
-- [ ] Setup host directory for large files to eventually replace `/pub-assets`.
+- [x] Setup public submodule for non-admin users.
+- [ ] Setup host directory for large files.
