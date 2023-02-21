@@ -22,7 +22,7 @@ within the root directory. The templated code will be compiled into a *static we
 
 The code is fairly simple to use and heavily relies on the [Liquid](https://shopify.github.io/liquid/) template language, as well as [Collections](https://jekyllrb.com/docs/collections/) for data management. 
 
-### Directories 
+
 Below is a brief description of each directory for core development:
 
 | Directory | Description |
@@ -39,26 +39,26 @@ Below is a brief description of each directory for core development:
 |`css`|Custom stylesheets. Relies primarily on [Bootstrap 3.4](https://getbootstrap.com/docs/3.4/) where `custom.css` is used override styling.
 |`js`|Custom Javascript functions.|
 
-### Files
+
 There are a few other files that require special attention:
 
 | File | Description |
 |:-|:-|
-|`_confil.yml`|Main [configuration](https://jekyllrb.com/docs/configuration/) file. Can store global variables accessible via `site.<my-variable>`. Anything changed here will only be updated *after rebuild*. | 
+|`_confil.yml`|Main [configuration](https://jekyllrb.com/docs/configuration/) file. Can store global variables accessible via `site.{{my-variable}}`. Anything changed here will only be updated *after rebuild*. | 
 |`index.html`| Website landing page.|
 |`Gemfile/Gemfile.lock`|Description of [dependencies](https://bundler.io/guides/gemfile.html) for Ruby environment, do not edit.|
 
-### Adding/Removing Entries
+## Adding/Removing Entries
 
-#### Lab Members
+### Lab Members
 
 Modify `_data/members.yaml` by adding/removing an entry. Make sure to add new members in the right category (e.g., grads, alumnis). Adding a member to the lab will automatically create a user card on the landing page and an entry at `{{site.url}}/people`.
 
-#### News
+### News
 
 Add new entry in `_data/news.yaml` following the given format. The most recent news will be shown on the landing pages, all news will be available add `{{site.url}}/news`.
 
-#### Publications
+### Publications
 
 To add a new publications, follow these simple steps:
 
@@ -69,7 +69,7 @@ To add a new publications, follow these simple steps:
 
 If done correctly, the paper will be automatically formatted and visible at `{{site.url}}/publications/acronym`.
 
-#### Courses 
+### Courses 
 
 Add a new entry in `_data/teaching.yaml` following the given format.
 
@@ -80,23 +80,15 @@ __Only organization administrators__ can push modifications to the main public w
 
 ### Website Updates
 
+__Users.__ We do not use pull requests on this repository as this would require every student to clone the main build in order to modify a handful of files. Instead, we will rely on a submodule which will allow users to use the GitHub web interface to add and modify Markdown files easily. Users can also use the Git command-line to push/pull from the public submodule repository.
 
-#### Users
-
-We do not use pull requests on this repository as this would require every student to clone the main build in order to modify a handful of files. Instead, we will rely on a submodule which will allow users to use the GitHub web interface to add and modify Markdown files easily. Users can also use the Git command-line to push/pull from the public submodule repository.
-
-#### Administrators
-
-To update the website following a recent change from a user, an administrator will need to:
+__Administrators.__ To update the website following a recent change from a user, an administrator will need to:
 1) Pull changes from the submodule `website-public`.
 2) Recompile the static website locally to update `_site`.
 3) Update `_site` in `public_html` using a tool like `rsync`.
 
-__Current administrators:__
-- Derek Nowrouzrezahrai
-- Marc-Antoine Beaudoin
-- Joey Litalien
+Current administrators are Derek Nowrouzrezahrai, Marc-Antoine Beaudoin and Joey Litalien.
 
-### TODOs
+## TODOs
 - [ ] Setup public submodule for non-admin users.
 - [ ] Setup host directory for large files to eventually replace `/pub-assets`.
