@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+@font-face {
+  font-family: 'Oxygene-1';
+  src:url('/assets/fonts/Oxygene-1.ttf.woff') format('woff'),
+      url('/assets/fonts/Oxygene-1.ttf.svg#Oxygene-1') format('svg'),
+      url('/assets/fonts/Oxygene-1.ttf.eot'),
+      url('/assets/fonts/Oxygene-1.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.degree-level {
+  font-family: 'Oxygene-1';
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 220px;
+}
+
+body {
+  font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  padding-top: 50px;
+  font-size: 1.7em;
+  background-color: #fdfdfd;
+  margin-bottom: 220px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+}
+
+.navbar li a {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+a {
+  color: #ef3e33;
+  transition: all 0.1s ease;
+}
+
+a:hover {
+  color: #ad161a;
+  text-decoration: none;
+}
+
+.lab-header {
+    color: #fff;
+    height: 500px;
+    padding: 60px 0px;
+    background: url(../assets/imgs/iray.png) center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.lab-header h1 {
+    display: inline;
+    padding: 6px 12px;
+    background: rgba(0,0,0,0.65);
+    border-radius: 5px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.lab-header p.splash {
+    font-size: 1.25em;
+    margin-top: 24px;
+    padding: 12px 12px;
+    background: rgba(0,0,0,0.65);
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 4px;
+}
+
+.fluid-bg {
+  background: url(imgs/fluid-bg.png) center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.hair {
+  background: url(imgs/hair-bg.png) center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    color: #fdfdfd;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.hair h1 {
+  border-bottom: none;
+}
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+
+section {
+  padding-bottom: 40px;
+}
+
+h3.people {
+  margin-bottom: 0;
+}
+
+h3+small {
+  color: #777;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.title-icon {
+  width: 48px;
+  height: auto;
+}
+
+.faculty {
+  margin-top: 0px;
+}
+
+.img-center {
+	margin: 0 auto;
+}
+
+/* .text-center {
+  margin-bottom: 24px;
+} */
+
+.icon {
+  width: 48px;
+  margin-right: 10px;
+}
+
+section.even {
+  background: #eee;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+section.even h1, section.even h3 {
+  border-color: #ddd;
+}
+
+.navbar-special {
+  color: #ee1e24 !important;
+}
+
+.navbar-brand .title {
+  color: #fff;
+}
+
+.navbar {
+  background-color: #000; 
+  border-bottom: none;
+}
+
+.navbar .active {
+  color: #fff !important;
+}
+
+.btn-default:hover {
+  color: #ee1e24;
+  border-color: #ee1e24;
+  background-color: rgba(255,0,0,0.1);
+}
+
+footer {
+  color: #fdfdfd;
+  padding-top: 3rem;
+  background-color: #000;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: #fdfdfd;
+}
+
+footer p {
+  color: #777;
+}
+
+footer img.bunny {
+  opacity: 0.3;
+  width: 100%;
+  height: auto;
+}
+
+.footer-sep {
+  padding-bottom: 20px;
+  /* border-bottom: 1px solid #333; */
+  color: #333;
+}
+
+.panel-heading h3 {
+  margin: 8px 0px 4px 0px;
+}
+
+.panel-image {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.center-cropped-lg {
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 256px;
+  width: 100%;
+}
+
+.center-cropped {
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 164px;
+  width: 100%;
+}
+
+.readmore {
+  font-style: italic;
+  color: #ee1e24;
+}
+
+.page-header::before { 
+  display: block; 
+  content: " "; 
+  margin-top: -90px; 
+  height: 90px; 
+  visibility: hidden; 
+}
+
+.row-m-t {
+  margin-bottom: 20px;
+}
+
+.paper-downloads {
+  list-style: none;
+  padding-left: 0;
+}
+
+.paper-downloads li {
+  text-decoration: none;
+.}
+
+.paper-external {
+  padding-left: 0;
+}
+
+.paper-external li {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.paper-author {
+  margin: 0;
+}
+
+dl.newslist dt {
+  padding: 0.5ex 0;
+  float: left;
+}
+
+dl.newslist dd {
+  padding: 0.5ex 0;
+  margin-left: 6em;
+  border-bottom: 1px solid #eee;
+}
+
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: #ef3e33;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 3px;
+}
+
+.fa {
+  margin-right: 5px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin-bottom: 15px; }
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.mgl-member {
+  border-bottom: 1px dashed #ef3e33;
+  text-decoration: none;
+}
+
+.animated-color {
+  transition: filter .4s ease-in-out;
+  -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(0%); /* FF 35+ */
+}
+
+.animated-color:hover {
+  -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(100%); /* FF 35+ */
+}
+
+.author-note {
+  margin: 16px 0px 8px 0px;
+  color: #777;
+}
+
+.teaser-caption {
+  line-height: 1em;
+  margin-top: 10px;
+}
+
+/* Copy to clipboard button */
+.btn-clipboard {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 6px 10px;
+  font-size: 13px;
+  /* background-color: $brand-color; */
+  font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #ee1e24;
+  cursor: pointer; }
+
+.btn-clipboard:hover {
+  color: #222; }
+
+.bibtex-box {
+  position: relative;
+  overflow-x: hidden; }
+
+.btn-static {
+  pointer-events: none;
+}
+
+i {
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.shadowed {
+  transition: all ease 0.4s;
+}
+.shadowed:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+  border: 1px solid  #ccc;
+}
+
+.btn, .panel, .img-thumbnail, .bibtex-box {
+  border-radius: 2px;
+}
+
+.country-icon {
+  height: 28px;
+  padding-bottom: 4px;
+}
+
+.pagination {
+  margin-bottom: 0px;
+}
+.pagination>li>a {
+  color: #ee1e24;
+}
+.pagination>li>a:hover {
+  color: #ad161a;
+  border-color: #ee1e24;
+  background-color: rgba(255,0,0,0.1);
+}

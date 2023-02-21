@@ -1,0 +1,29 @@
+<div class="col-md-3 portfolio-item">
+  <div class="panel panel-default shadowed">
+    <div class="panel-image">
+      <a href="{{ include.website }}">
+        {% if include.photo %}
+          <img src="{{ include.photo }}" class="figure-img img-responsive center-cropped-lg animated-color" alt="{{ include.first }}">
+        {% else %}
+        <img src="/assets/imgs/male-placeholder.jpeg" class="figure-img img-responsive center-cropped-lg animated-color" alt="{{ include.first }}">
+        {% endif %}
+      </a>
+    </div>
+    <div class="panel-body text-center">
+      <h4 style="margin: 0">{{ include.first }} {{ include.last }}<br></h4>
+      <div>
+        <small><span class="degree-level">
+        {%- if include.title == "Research Assistant" -%}f{%- else -%}{{ include.icon }}{%- endif -%}
+        </span> {{ include.title }} 
+        {% if include.begin_year %}
+          ({{ include.begin_year }}&mdash;)
+        {% endif %}</small>
+      </div>
+      <!-- <div>
+        <a href="#" data-toggle="tooltip" data-placement="bottom" title="{{ include.email }}"><i class="fa-solid fa-at"></i></a>
+        <a href="{{ include.website }}"><i class="fa-solid fa-earth-americas"></i> </a>
+        <a href="{{ include.google_scholar }}"><i class="ai ai-google-scholar-square"></i></a>
+      </div> -->
+    </div>
+  </div>
+</div>

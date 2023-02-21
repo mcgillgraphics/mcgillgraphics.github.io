@@ -1,0 +1,26 @@
+- number: ECSE 446
+  title: Realistic Image Synthesis
+  description: |
+    The first part of this course presents modern mathematical models of lighting and shading, and the numerical methods and algorithms needed to solve them and generate beautiful realistic images. Afterwards, we explore how these methods can be adapted and applied to modern machine learning-based problems. Technical content will be delivered using a combination of in-class lectures, tutorial/lab sessions, and (optional) supplemental reading. Learning objectives will be solidified and evaluated through coding assignments in Python (relying heavily on careful vectorization with <code>numpy</code> and <code>Jax</code>).
+  instructor: Nowrouzezahrai
+  semester: Fall 2022
+  thumbnail: /assets/imgs/ecse446.png
+  website: https://www.cim.mcgill.ca/~derek/ecse446.html
+
+- number: COMP 557
+  title: Fundamentals of Computer Graphics
+  description: |
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ullamcorper nisl non elit hendrerit, sed maximus purus viverra. Vestibulum blandit lacinia arcu iaculis commodo. In in mauris ac nisi sodales vulputate non et nulla. Duis viverra nulla erat, et posuere enim sagittis vel. Quisque porta aliquet nisl. Vestibulum convallis metus in velit vulputate sagittis. Maecenas eleifend dapibus ex et lacinia. Nunc aliquam euismod sapien, ut luctus augue rutrum at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+  instructor: Kry
+  semester: Fall 2022
+  thumbnail: /assets/imgs/comp557.png
+  website: https://www.cs.mcgill.ca/~kry/comp557F22/
+
+- number: COMP 559
+  title: Fundamentals of Computer Animation
+  description: |
+    This course will provide an introduction to computational techniques for generating animation. Topics will include methods which have applications in the creation of movie effects, the development of video games, and training simulations. While the focus will largely be on physically based methods for the automatic generation of motion, part of the course will cover methods for user control of animation and reuse of captured motion data. The main objective of this course is to have students develop an understanding of fundamental techniques used for computer animation. 
+  instructor: Kry
+  semester: Winter 2023
+  thumbnail: /assets/imgs/comp559.png
+  website: https://www.cs.mcgill.ca/~kry/comp559W23/

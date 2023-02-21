@@ -1,0 +1,299 @@
+---
+layout: default
+---
+
+<div class="container">
+  <section>
+  <h1 class="page-header">
+    {% if page.format-title %} 
+      {{ page.format-title }}
+    {% else %} 
+      {{ page.title }}
+    {% endif %}
+  </h1>
+  <div class="row">
+    <div class="col-lg-7">
+      {% for a in page.authors %}
+        <h3 class="paper-author">
+        {% if a.link %}
+          <a href="{{ a.link }}">
+            {{ a.name }}
+            {%- if a.joint-first -%}*{%- endif -%}
+            {%- if page.internship-note and a.internship -%}<sup>†</sup>{%- endif -%}
+            ,</a>
+        {% else %}
+          {{ a.name }} 
+          {%- if a.joint-first -%}*{%- endif -%}
+          {%- if page.internship-note -%}<sup>†</sup>{%- endif -%},
+        {% endif %}
+        <small>{{ a.institution }}</small>
+        </h3>
+      {% endfor %}
+    </div>
+
+    <!-- Journal/conference title -->
+    <div class="col-lg-5" style="border-left: 1px solid #eee;">
+      <h4>In
+        <em>{{ page.journal }}</em>
+        {%- if page.spotlight-note -%}
+        <b> &mdash; {{ page.spotlight-note }}</b>
+        {%- endif -%}
+        <p>{% if page.journal-note %}
+          {% if page.location.continent contains "Remote" %}
+            <i class="fa-solid fa-house-laptop"></i>
+          {% else %}
+            <i class="fa-solid fa-earth-{{ page.location.continent | downcase }}"></i>
+          {% endif %}
+          {{ page.journal-note }} ({{ page.location.city }}, {{ page.location.country }}
+          <img class="country-icon" src="https://img.icons8.com/color/48/null/{{ page.location.country | downcase | replace: ' ', '-'}}.png"/>
+          {%- if page.location.continent contains "Remote" -%}&nbsp;/ Remote {%- endif -%})
+        {% endif %}
+        </p>
+      </h4>
+      {% if page.award-note %}
+        <h4><i class="fa-solid fa-medal"></i> {{ page.award-note }}</h4>
+      {% endif %}
+      {{ page.month }} {{ page.year }}
+      {% if page.authors.first.joint-first or page.internship-note %}
+      <div class="author-note">
+        <small>
+          {% if page.authors.first.joint-first %}
+            *Authors with equal contribution<br>
+          {% endif %}
+          {%- if page.internship-note -%}
+            <sup>†</sup>{{ page.internship-note }}
+          {%- endif -%}
+        </small>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Teaser figure-->
+  {% if page.teaser %}
+    <div class="row">
+      <div class="col-md-12">
+        <img src="{{ page.teaser }}" style="max-width: 100%; display: block; margin: auto"></a>
+        <p class="text-justify teaser-caption"><small><em> {{ page.teaser-caption }}</em></small></p>
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Abstract -->
+  <div>
+    <h2 class="page-header">Abstract</h2>
+    <div>
+      <p class="text-justify">{{ page.abstract }}</p>
+    </div>
+  </div>
+
+  <!-- Download links -->
+  {% if dl.published %}
+  <div>
+    {% assign dl = page.downloads %}
+    <h2 class="page-header">Downloads</h2>
+    <p>
+      <h3>Publication</h3>
+      <ul class="fa-ul">
+        {% for paper in dl.paper %}
+        <li><span class="fa-li"><i class="far fa-file-pdf"></i></span>
+          <a href="{{ paper.file }}">Paper (author's version {%- if paper.type -%}, {{ paper.type | downcase }}{%- endif -%}), PDF ({{ paper.size }})</a>
+        </li>
+        {% endfor %}
+        {% if dl.publisher.url %}
+        <li><span class="fa-li"><i class="{% if dl.publisher.url contains 'acm' %} ai ai-acmdl {% else %} fas fa-atlas {% endif %}"></i>
+          </span>
+          <a href="{{ dl.publisher.url }}">Publisher's official version</a> &ndash; may require a subscription
+        </li>
+        {% endif %}
+        {% if dl.arxiv.url %}
+        <li><span class="fa-li"><i class="ai ai-arxiv-square"></i></span>
+          <a href="{{ dl.arxiv.url }}">arXiv version</a>
+        </li>
+        {% endif %}
+        {% if dl.main.url %}
+        <li><span class="fa-li"><i class="fas fa-bolt"></i></span>
+          <a href="{{ dl.main.url }}">Primary website</a>
+        </li>
+        {% endif %}
+      </ul>
+
+      {% if dl.supplementary.size > 0 %}
+      <h3>Supplementals</h3>
+      <ul class="fa-ul">
+        {% for supp in dl.supplementary %}
+          {% if supp.type == "PDF" %}
+            {% assign supp-icon = "fa-file-pdf" %}
+          {% elsif supp.type == "ZIP" %}
+            {% assign supp-icon = "fa-file-archive" %}
+          {% elsif supp.type == "HTML" %}
+            {% assign supp-icon = "fa-eye" %}
+          {% else %}
+            {% assign slides-icon = "fa-file-image" %}
+        {% endif %}
+          <li><span class="fa-li"><i class="fa-regular {{ supp-icon }}"></i></span>
+            <a href="{{ supp.url }}">Supplementary, {{ supp.type }} {% if supp.type != "HTML" %} ({{ supp.size }}) {% endif %}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if dl.slides.size > 0 %}
+      <h3>Slides</h3>
+      <ul class="fa-ul">
+        {% for slides in dl.slides %}
+          {% if slides.type == "PDF" %}
+            {% assign slides-icon = "fa-file-pdf" %}
+          {% elsif slides.type == "Powerpoint" %}
+            {% assign slides-icon = "fa-file-powerpoint" %}
+          {% else %}
+            {% assign slides-icon = "fa-file-image" %}
+          {% endif %}
+          <li><span class="fa-li"><i class="fa-regular {{ slides-icon }}"></i></span>
+            <a href="{{ slides.file }}">Presentation slides, {{ slides.type }} ({{ slides.size }})</a>
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if dl.videos.size > 0 %}
+      <h3>Video</h3>
+      <ul class="fa-ul">
+        {% for video in dl.videos %}
+          {% if video.url contains "youtube" %}
+            {% assign video-icon = "fa-brands fa-youtube" %}
+          {% else %}
+            {% assign video-icon = "fa-regular fa-file-video" %}
+          {% endif %}
+          <li><span class="fa-li"><i class="{{ video-icon }}"></i></span>
+            <a href="{{ video.url }}">Video, {{ video.type }} 
+              {% if video.venue %} ({{ video.venue }}) {% endif %}
+              {% if video.size %} ({{ video.size }}) {% endif %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if dl.code.file or dl.code.url %}
+      <h3>Code</h3>
+      <ul class="fa-ul">
+        {% if dl.code.file %}
+        <li><span class="fa-li"><i class="far fa-file-code"></i></span>
+          <a href="{{ dl.code.url }}">Code archive, {{ dl.code.type }} ({{ dl.code.size }})</a>
+        </li>
+        {% endif %}
+        {% if dl.code.url %}
+          <li><span class="fa-li"><i class="fab fa-github"></i></span>
+          {% if dl.code.published %}
+            <a href="{{ dl.code.url }}">Code repository (Git)</a>
+          {% else %}
+            Coming soon
+          </li>
+          {% endif %}
+        {% endif %}
+      </ul>
+      {% endif %}
+    </p>
+  </div>
+  {% endif %}
+
+  <!-- Video embedding -->
+  {% if dl.video-embed %}
+  <div>
+    <h2 class="page-header">Video</h2>
+    <div class="video-container">
+      <iframe frameborder="0" class="video" src="{{ dl.video-embed }}"></iframe>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Thanks -->
+  {% if page.acknowledgements %}
+    <div>
+      <h2 class="page-header">Acknowledgments</h2>
+      <p class="text-justify">
+        {{ page.acknowledgements }}
+      </p>
+    </div>
+  {% endif %}
+
+  <!-- BibTeX citation -->
+  {% if dl.published %}
+  <div>
+    <h2 class="page-header">Citation</h2>
+    <blockquote class="justified">
+      {% for a in page.authors %}
+        {% if forloop.last %}
+          {% if forloop.length != 1 %}
+            and
+            {% if a.link %}
+              <a href="{{ a.link }}">{{ a.name }}</a>.
+            {% else %}
+              {{ a.name }}.
+            {% endif %}
+          {% else %}
+            {% if a.link %}
+              <a href="{{ a.link }}">{{ a.name }}</a>.
+            {% else %}
+              {{ a.name }}.
+            {% endif %}
+          {% endif %}
+        {% else %}
+          {% if a.link %}
+            <a href="{{ a.link }}">{{ a.name }}</a>,
+          {% else %}
+            {{ a.name }},
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      {{ page.title }}. <em>{{ page.journal }}</em>,
+      {% if page.volume %} 
+        Vol. {{ page.volume }},
+      {% endif %}
+      {% if page.number %} 
+        No. {{ page.number }}, 
+      {% endif %}
+      {% if page.article-no %} 
+        Article {{ page.article-no }},
+      {% endif %}
+      {{ page.month }} {{ page.year }}.
+    </blockquote class="justified">
+
+    <div>
+      <pre class="bibtex-box"><code id="bibtex">{{- page.tex -}}</code><div class="btn-clipboard" id="clipboard-copy" data-clipboard-target="#bibtex" data-text-swap="Copied!"><i class="far fa-copy"></i> Copy to clipboard</div></pre>
+    </div>
+  </div>
+
+  {% endif %}
+
+  <!-- Other content -->
+  {{ content }}
+
+</div>
+
+<!-- Copy-paste JS -->
+<script type="text/javascript">
+  $(".btn-clipboard").on("click", function() {
+    var el = $(this);
+    if (el.text() == el.data("text-swap")) {
+      el.text(el.data("text-original"));
+    } else {
+      el.empty();
+      el.append('<i class="fas fa-check"></i> ' + el.data("text-swap"));
+      el.text(el.data("text-original")).delay(1);
+    }
+  });
+
+  var clipboard = new ClipboardJS('#clipboard-copy');
+
+  clipboard.on('success', function(e) {
+    console.log(e);
+  });
+
+  clipboard.on('error', function(e) {
+    console.log(e);
+  });
+</script>

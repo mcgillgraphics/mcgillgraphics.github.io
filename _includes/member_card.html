@@ -1,0 +1,45 @@
+<div class="row row-m-t">
+  <div class="col-lg-2">
+    <a href="{{ include.website }}">
+      {% if include.photo %}
+        <img class="img-responsive img-thumbnail center-cropped animated-color shadowed" src="{{ include.photo }}">
+      {% else %}
+        <img class="img-responsive img-thumbnail animated-color" src="http://placehold.it/200x200">
+      {% endif %}
+    </a>
+  </div>
+  <div class="col-lg-10">
+    <div class="col-md-8">
+      <h3>{{ include.first }} {{ include.last }} {% if include.pronouns %}<small>{{ include.pronouns }}</small>{% endif %}</h3>
+      <div>
+          <span class="degree-level">{%- if include.title == "Research Assistant" -%}f{%- else -%}{{ include.icon }}{%- endif -%}</span> 
+          {{ include.title }} {%- if include.title contains "Professor" -%}, <em>{{ include.department }}</em> {%- endif -%}
+          {% if include.begin-year %}
+            ({{ include.begin-year }}&mdash;)
+          {% endif %}
+      </div>
+      <div style="margin-top: 10px;">
+        <div class="btn-group" role="group" aria-label="Quick Links">
+          <button type="button" class="btn btn-default btn-static"><i class="fa-solid fa-location-dot"></i> {{ include.office }}</button>
+          <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="{{ include.email }}"><i class="fa-solid fa-envelope"></i> Email</button>
+          <button type="button" class="btn btn-default"><i class="fa-solid fa-earth-americas"></i><a href="{{ include.website }}"> Website</a></button>
+          {% if include.google-scholar %}
+            <button type="button" class="btn btn-default"><i class="ai ai-google-scholar-square"></i><a href="https://scholar.google.ca/citations?user={{ include.google-scholar }}"> Google Scholar</a></button>
+          {% endif %}
+          {% if include.dblp %}
+            <button type="button" class="btn btn-default"><i class="ai ai-dblp-square"></i><a href="{{ include.dblp }}"> dblp</a></button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" style="border-left: 1px solid #eee;">
+      {% if member.research %}
+        <h4>Research Interests</h4>
+        <i>{{ member.research }}</i>
+      {% endif %}
+      {% if member.key-paper %}
+        <p style="margin-top: 8px;"><a href="/publications/{{ member.key-paper }}"><i class="fa-solid fa-star-of-life"></i> Highlighted work</a></p>
+      {% endif %}
+    </div>
+  </div>
+</div>

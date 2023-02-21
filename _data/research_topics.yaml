@@ -1,0 +1,14 @@
+- topic: 
+  title: Appearance Modeling
+  description: Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+  thumbnail: http://placehold.it/700x400
+  
+- topic: 
+  title: Light Transport Simulation
+  description: Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+  thumbnail: http://placehold.it/700x400
+
+- topic: 
+  title: Neural Rendering
+  description: Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+  thumbnail: http://placehold.it/700x400

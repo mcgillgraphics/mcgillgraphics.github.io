@@ -1,0 +1,187 @@
+faculty:
+  - first: Derek
+    last: Nowrouzezahrai
+    email: derek [at] cim [dot] mcgill [dot] ca
+    website: https://www.cim.mcgill.ca/~derek/
+    google-scholar: =nCZ2PMcAAAAJ
+    photo: https://www.cim.mcgill.ca/~derek/files/derek.jpg
+    title: Associate Professor
+    department: Dept. of Electrical & Computer Engineering
+    office: MCXXX
+    research: Physically based rendering, neural rendering
+    key-paper:
+
+  # - first: Paul G.
+  #   last: Kry
+  #   email: kry [at] cs [dot] mcgill [dot] ca
+  #   website: https://www.cs.mcgill.ca/~kry/
+  #   google-scholar: Uro_AS0AAAAJ
+  #   photo: https://www.cs.mcgill.ca/~kry/kry2016A-400w.jpg
+  #   title: Associate Professor
+  #   department: School of Computer Science
+  #   office: MC318
+  #   research: Computer animation
+  #   key-paper:
+
+  - first: Marc-Antoine
+    last: Beaudoin
+    email: ma [dot] beaudoin [at] mail [dot] mcgill [dot] ca
+    website: https://www.mabeaudoin.com/
+    google-scholar: XgXug9oAAAAJ
+    photo: /assets/imgs/marc-antoine.png
+    title: Research Fellow
+    office: Mila
+    research: 
+    key-paper:
+
+postdocs:
+  - first: Hisanari
+    last: Otsu
+    email: hisanari [dot] otsu [at] kit [dot] edu
+    website: http://lightmetrica.org/h-otsu/
+    google-scholar: TdsG0_EAAAAJ
+    photo: http://lightmetrica.org/h-otsu/img/portrait.jpg
+    title: Postdoc
+    office: MD456
+    begin-year: 2022
+    research: Physically based rendering, light transport simulation
+    key-paper:
+
+grads:
+  - first: Joey 
+    last: Litalien
+    email: joey [dot] litalien [at] mail [dot] mcgill [dot] ca
+    website: https://joeylitalien.github.io
+    google-scholar: 511IDxQAAAAJ
+    photo: https://joeylitalien.github.io/assets/me_2021.png
+    title: Ph.D.
+    begin-year: 2019
+    office: MD456
+    research: Physically based rendering, neural rendering, neural SDFs
+    key-paper: nglod
+
+  - first: Damien 
+    last: Rioux-Lavoie
+    email: damien [dot] rioux [dash] lavoie [at] mail [dot] mcgill [dot] ca
+    website: https://riouxld21.github.io/research/
+    photo: https://riouxld21.github.io/research/img/DSC08599.jpg
+    title: Ph.D.
+    begin-year: 2018
+    office: MD456
+    research: MCMC methods, physically based rendering, fluid simulations
+    key-paper: mc-fluid
+
+  - first: Sayantan 
+    last: Datta
+    email: sayantan [dot] datta [at] mail [dot] mcgill [dot] ca
+    website: https://sayan1an.github.io/
+    photo: https://sayan1an.github.io/logos/self.jpg
+    title: Ph.D.
+    office: MD456
+    begin-year: 2018
+    research: Physically based rendering, neural rendering
+    key-paper: neural-shadows
+
+  - first: Paul 
+    last: Barde
+    email: bardepau [at] mila [dot] quebec
+    website: 
+    google-scholar: FoxktlkAAAAJ
+    photo: https://pbs.twimg.com/profile_images/1599502703847243776/nES72DI1_400x400.jpg
+    title: Ph.D.
+    office: Mila
+    begin-year: 2019
+    research:
+    key-paper:
+
+  - first: Mattie 
+    last: Tesfaldet
+    pronouns: they/them
+    email:
+    website: https://mtesfaldet.net/
+    google-scholar: YzE4q2gAAAAJ
+    photo: https://mila.quebec/wp-content/uploads/2021/10/profile_vector_cropped_2-509x676.jpg
+    title: Ph.D.
+    begin-year: 2020
+    office: Mila
+    research: Generative models for content creation, differentiable self-organizing models
+    key-paper: nca
+
+  - first: Daniel 
+    last: Bairamian
+    email:
+    website: https://www.linkedin.com/in/daniel-bairamian-589a16159
+    google-scholar:
+    photo: https://avatars.githubusercontent.com/u/23124913
+    title: Ph.D.
+    office: Mila
+    begin-year: 2022
+    research: Reinforcement learning
+    key-paper:
+
+
+  - first: Alexandre 
+    last: Sirois-Vigneux
+    email:
+    website: http://www.alexandresiroisvigneux.com/
+    google-scholar: 
+    photo: /assets/imgs/male-placeholder.jpeg
+    title: Master
+    office: Remote
+    begin-year: 2021
+    research:
+    key-paper: torch
+
+  - first: Yaru (Ziyu) 
+    last: Liu
+    email: 
+    website: https://yarusophialiu.github.io/
+    google-scholar:
+    photo: https://yarusophialiu.github.io/assets/images/selfie.JPG
+    title: Master
+    office: MD456
+    begin-year: 2022
+    research:
+    key-paper:
+
+  - first: Tooba 
+    last: Rahimnia
+    email:
+    website:
+    google-scholar:
+    photo: https://media.licdn.com/dms/image/C4E03AQHeGaJkTqBFEw/profile-displayphoto-shrink_800_800/0/1637976354883?e=2147483647&v=beta&t=ePIFYC2AWBixR9WgDuXBVV7BMXapEQ6xioDKMbBK1gI
+    title: Master
+    office: MD456
+    begin-year: 2022
+    research:
+    key-paper:
+
+alumnis:
+  - first: Yangyang
+    last: Zhao
+    title: Ph.D.
+    end_year: 2022
+    now_at: Huewai Research
+  
+  - first: Jean-Philippe
+    last: Guertin
+    title: Ph.D.
+    end_year: 2021
+    now_at: Ubisoft LaForge
+
+  - first: Luis E.
+    last: Gamboa
+    title: Ph.D.
+    end_year: 2020
+    now_at: UMSNH
+
+  - first: Chakravarty R. Alla
+    last: Chaitanya
+    title: Ph.D.
+    end_year: 2019
+    now_at: Reality Labs Research, Meta
+
+  - first: Gaspard
+    last: Nahmias 
+    title: M.Sc.
+    end_year: 2022

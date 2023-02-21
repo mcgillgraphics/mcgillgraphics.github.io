@@ -1,0 +1,29 @@
+# Site settings
+title: McGill Graphics Lab
+acronym: MGL
+email: derek@cim.mcgill.ca
+email-display: derek [at] cim [dot] mcgill [dot] ca
+description: > # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://gfx.lab.mcgill.ca" # the base hostname & protocol for your site
+
+address: 
+    building: Macdonald Engineering Building
+    street: 3480 University Street
+    city: Montreal
+    province: Quebec
+    postal: H3A 0E9
+
+# Build settings
+markdown: kramdown
+collections:
+    members:
+        output: true
+    research_topics:
+        output: true
+    teaching:
+        output: true
+    publications:
+        output: true
+    news:
+        output: true

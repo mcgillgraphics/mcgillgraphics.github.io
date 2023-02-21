@@ -1,0 +1,26 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p><b> <i class="fa-regular fa-map"></i> {{ site.title }}</b><br>
+          {{ site.address.building }}<br>
+          {{ site.address.street }}<br>
+          {{ site.address.city }} ({{ site. address.province }})<br>
+          {{ site.address.postal }}
+        </p>
+        <div class="row">
+          <div class="col-md-6" style="color:#555;">Copyright &copy; {{ 'now' | date: "%Y" }} {{ site.title }}</div>
+          <div class="col-md-6 text-right"><a href="#top"><i class="fa fa-chevron-up" aria-hidden="true"></i>Back to top</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="">
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
+    $('.carousel').carousel();
+  });
+</script>

@@ -1,0 +1,37 @@
+<div class="col-md-2 portfolio-item">
+  <div class="panel panel-default shadowed">
+    <div class="panel-image">
+      <a href="{{ include.website }}">
+        {% if include.photo %}
+          <img src="{{ include.photo }}" class="figure-img img-responsive center-cropped animated-color" alt="{{ include.first }}">
+        {% else %}
+        <img src="/assets/imgs/male-placeholder.jpeg" class="figure-img img-responsive center-cropped animated-color" alt="{{ include.first }}">
+        {% endif %}
+      </a>
+    </div>
+    <div class="panel-body text-center">
+      <h4 style="margin: 0">{{ include.first }}<br>{{ include.last }}</h4>
+      <div>
+        <small><span class="degree-level">{{ include.icon }}</span> {{ include.title }}
+        {% if include.begin-year %}
+          ({{ include.begin-year }}&mdash;)
+        {% endif %}</small>
+      </div>
+      <!-- <div>
+        <a style="cursor: pointer;" data-toggle="tooltip" data-placement="bottom" title="{{ include.email }}"><i class="fa-solid fa-at"></i></a>
+        {% if include.website %}
+          <a href="{{ include.website }}"><i class="fa-solid fa-earth-americas"></i> </a>
+        {% endif %}
+        {% if include.research %}
+          <a style="cursor: pointer;" data-toggle="popover" data-placement="bottom" title="Research Interests" data-content="{{ include.research }}"><i class="fa-solid fa-circle-user"></i></a>
+        {% endif %}
+        {% if include.google_scholar %}
+        <a href="{{ include.google_scholar }}"><i class="ai ai-google-scholar-square"></i></a>
+        {% endif %}
+        {% if include.dblp %}
+        <a href="{{ include.dblp }}"><i class="ai ai-dblp"></i></a>
+        {% endif %}
+      </div> -->
+    </div>
+  </div>
+</div>
